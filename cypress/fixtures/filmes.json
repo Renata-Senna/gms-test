@@ -1,24 +1,24 @@
 [
     {
-        "título" : "Matrix",
+        "titulo" : "Matrix",
         "ano" : 1980,
         "descricao" : "Matrix é um filme..."
     },
 
     {
-        "título" : "Batman",
+        "titulo" : "Batman",
         "ano" : 1992,
         "descricao" : "Batman é um filme..."
     },
 
     {
-        "título" : "Inception",
+        "titulo" : "Inception",
         "ano" : 1999,
         "descricao" : "Inception é um filme..."
     },
 
     {
-        "título" : "The lord of the rings",
+        "titulo" : "The lord of the rings",
         "ano" : 2010,
         "descricao" : "O senhor dos anéis é um filme..."
     }
