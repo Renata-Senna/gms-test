@@ -21,6 +21,12 @@
         "titulo" : "The lord of the rings",
         "ano" : 2010,
         "descricao" : "O senhor dos anéis é um filme..."
+    },
+
+    {
+        "titulo" : "The Godfather",
+        "ano" : 1988,
+        "descricao" : "The Godfather é um filme..."
     }
 
 
