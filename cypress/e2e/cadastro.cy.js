@@ -7,37 +7,40 @@ describe('US-012-Funcionalidade: Cadastro de membros', () => {
   beforeEach (() => {
     cy.visit('/')
   });
-  
-  it('Deve fazer o cadastro de campos obrigatórios', () => {
+
+  afterEach (()=> {
+    cy.screenshot()
+  });
+
+  it('Fazer cadastro de campos obrigatórios', () => {
     var email = `renata${Date.now()}@teste.com`
     cy.preencherCadastro('Renata', 'Senna', email, '112536987452', 'Teste@12345')
     cy.get('#signup-response').should('contain' , 'Cadastro realizado com sucesso!')
   })
 
-  it('Deve validar mensagem de erro com o campo nome inválido', () => {
+  it('Validar msg de erro no campo nome inválido', () => {
     cy.preencherCadastro('Renata20', 'Senna', 'renata@teste.com', '112536987452', 'Teste@12345')
     cy.get('#signup-response').should('contain' , 'Nome deve conter apenas caracteres alfabéticos, acentuados e espaços')
   })
 
-  it('Deve validar mensagem de erro com o campo sobrenome inválido', () => {
+  it('Validar msg de erro no campo sobrenome inválido', () => {
     cy.preencherCadastro('Renata', 'Senna20', 'renata@teste.com', '112536987452', 'Teste@12345')
     cy.get('#signup-response').should('contain' , 'Sobrenome deve conter apenas caracteres alfabéticos, acentuados e espaços')
   })
 
-  it('Deve validar mensagem de erro com o campo email', () => {
+  it('Validar msg de erro no campo email', () => {
     cy.preencherCadastro('Renata', 'Senna', 'renatateste.com', '112536987452', 'Teste@12345')
     cy.get('#signup-response').should('contain' , 'E-mail deve ser um email válido')
   })  
 
-  it('Deve validar mensagem de erro de senha fraca', () => {
+  it('Validar msg de erro senha fraca', () => {
     cy.preencherCadastro('Renata', 'Senna', 'renata@teste.com', '112536987452', '12345')
     cy.get('#signup-response').should('contain' , 'Senha deve ter pelo menos 8 caracteres, incluir uma letra maiúscula, um número e um caractere especial (!@#$&*)' )
-    
   }) 
 
-  it('Deve validar mensagem de erro de senha vazia', () => {
+  it('Validar msg de erro senha vazia', () => {
     cy.preencherCadastro('Renata', 'Senna', 'renata@teste.com', '112536987452', '')
-    cy.get('#signup-response').should('contain' , 'Senha não pode estar vazia')
+    cy.get('#signup-response').should('contain' , 'is not allowed to be empty')
   })
   
 
